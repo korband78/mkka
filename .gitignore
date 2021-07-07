@@ -1,0 +1,13 @@
+var
+bin
+pkg
+sbin/dev
+sbin/run
+**/*.swp
+github.com
+golang.org
+go.mongodb.org
+.atomenv.json
+vendor
+go.sum
+.DS_STORE

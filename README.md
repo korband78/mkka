@@ -1,0 +1,15 @@
+# MKKA 모바일 청첩장
+- 설치 : `./install.sh`
+- B/E 빌드 : `./build.sh`
+- F/E 빌드 : `./web-build.sh`
+- 시작 : `nohup ./run -port <PORT> > /dev/null &`
+  - 선택 옵션
+    - `-rdir <ROOT_DIR>` : 루트 디렉토리 (default: 현재 프로젝트 루트)
+    - `-ldays <LOG_SAVE_DAYS>` : 로그 보관 일 수 (default: 5)
+    - `-debug` : 디버깅 모드
+- 중지 : `./stop.sh`
+- 재시작 : `./restart.sh`
+- 디버깅 실행 : `./debug.sh -p <PORT>`
+  - 선택 옵션
+    - `-q or --quiet` : stdout 미표시
+- 배포 : `./deploy.sh`

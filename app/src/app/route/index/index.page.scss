@@ -1,0 +1,38 @@
+.toggle-icon {
+  font-size: 24px; color: #666; cursor: pointer;
+}
+
+.img {
+  height: 0;
+  width: calc(33.333% - 12px);
+  padding-bottom: calc(33.333% - 12px);
+  margin: 6px;
+  border-radius: 2px;
+  background-size: cover !important;
+}
+
+.img:hover,.hover:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  -webkit-transition:all .3s ease .01s;
+  transition:all .3s ease .01s;
+}
+
+.swiper-wrapper {
+  background: #000;
+}
+
+.swiper-slide {
+  background: #000;
+}
+
+.hide {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.force {
+  z-index: 1000;
+}

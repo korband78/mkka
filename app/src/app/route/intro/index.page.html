@@ -1,0 +1,217 @@
+<swiper [config]="config" #swiper style="-webkit-transform: translateZ(0);transform: translateZ(0);" [ngClass]="{'hide': !is_show_image, 'force': is_show_image}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
+  <div class="swiper-wrapper" [ngClass]="{'hide': !is_show_image}" style="-webkit-transform: translateZ(0);transform: translateZ(0);">
+    <div class="swiper-slide" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" style="-webkit-transform: translateZ(0);transform: translateZ(0);">
+      <img [src]="'assets/img/' + i + '.jpg'" style="object-fit: contain; width: 100%; height: 100vh;"/>
+    </div>
+  </div>
+  <div [ngClass]="{'hide': !is_show_image}" style="position: fixed; top: 32px; left: 8px; z-index: 2; cursor: pointer;">
+    <a *ngIf="get_download_image_url(false)" [download]="'wedding_' + get_download_image_url(true) + '.jpg'" [href]="get_download_image_url()"><ion-icon name="download" style="color: #fff; font-size: 40px;"></ion-icon></a>
+  </div>
+  <div [ngClass]="{'hide': !is_show_image}" style="position: fixed; top: 32px; right: 4px; z-index: 2; cursor: pointer;" (click)="is_show_image=false">
+    <ion-icon name="close-sharp" style="color: #fff; font-size: 48px;"></ion-icon>
+  </div>
+  <div [ngClass]="{'hide': !is_show_image}" style="position: fixed; top: calc(50% - 10px); left: 4px; z-index: 2; cursor: pointer;" (click)="prev_slide()">
+    <ion-icon name="chevron-back-sharp" style="color: #fff; font-size: 48px;"></ion-icon>
+  </div>
+  <div [ngClass]="{'hide': !is_show_image}" style="position: fixed; top: calc(50% - 10px); right: 4px; z-index: 2; cursor: pointer;" (click)="next_slide()">
+    <ion-icon name="chevron-forward-sharp" style="color: #fff; font-size: 48px;"></ion-icon>
+  </div>
+</swiper>
+
+<div>
+  <div style="margin-top: 12%; text-align: center; color: #c69856; font-size: 20px; font-weight: 700; letter-spacing: 2px; line-height: 54px;">
+    11/08
+    <br>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <span style="letter-spacing: 12px;">김민기</span>
+      <img src="assets/icon/favicon.png" style="width: 24px; height: 24px; margin-right: 10px;">
+      <span style="letter-spacing: 12px;">고경아</span>
+    </div>
+  </div>
+  <div style="padding: 0 4%; margin-top: 5%;">
+    <img (click)="show_image(1)" src="assets/img/1.jpg" style="border-radius: 2px; width: 100%;" class="hover">
+  </div>
+  <div style="margin-top: 10%; margin-bottom: 20%; text-align: center; color: #c69856; font-size: 18px; font-weight: 600; letter-spacing: 1px; line-height: 28px;">
+    2020.11.08(일) 오후 2:30<br>
+    <span style="font-size: 16px; letter-spacing: 0px;">더블유스퀘어 L층 그레이스홀</span>
+  </div>
+  <div style="padding: 0 4%;">
+    <iframe src="https://video.feelmaker.co.kr/150331/91" frameborder="0" allowfullscreen="allowfullscreen" style="width: 100%; height: 320px; margin-top: 64px;"></iframe>
+  </div>
+  <div style="background-color: #F9F9F9;">
+    <img src="assets/img/greeting.png" style="width: 100%;">
+    <div style="padding: 5% 5% 12% 10%; line-height: 37px; font-size: 16px; font-weight: 600; letter-spacing: -1px; word-break: break-all; color: #555555;">
+      무심코 지나쳤던 모든 것을<br>
+      새롭게 느끼게 하고,<br>
+      소소한 일상도 행복하고 즐거워지는 사람과<br>
+      특별한 매일을 함께 맞이하려 합니다.<br>
+      <br>
+      그 시작의 자리에<br>
+      귀한 걸음 하시어 축복해 주신다면<br>
+      더할 나위 없이 감사하겠습니다.
+    </div>
+  </div>
+  <div style="margin: 20% 10% 0 10%;">
+    <div style="display: flex; align-items: center;">
+      <span style="color: #414141; font-size: 17px; font-weight: 500; margin-right: 5%;">신랑</span>
+      <span style="color: #555555; font-size: 20px; font-weight: 700;">김민기</span>
+      <div style="flex-grow: 1;"></div>
+      <a href="tel:010-9347-1324" style="margin-right: 15%;"><img src="assets/img/phone_g.png" style="width: 27px; height: 27px;"></a>
+      <a href="sms:010-9347-1324"><img src="assets/img/sms_g.png" style="width: 27px; height: 23.78px;"></a>
+    </div>
+    <div style="display: flex; align-items: center; margin-top: 36px;">
+      <span style="color: #414141; font-size: 17px; font-weight: 500; margin-right: 5%;">신부</span>
+      <span style="color: #555555; font-size: 20px; font-weight: 700;">고경아</span>
+      <div style="flex-grow: 1;"></div>
+      <a href="tel:010-7206-3960" style="margin-right: 15%;"><img src="assets/img/phone_g.png" style="width: 27px; height: 27px;"></a>
+      <a href="sms:010-7206-3960"><img src="assets/img/sms_g.png" style="width: 27px; height: 23.78px;"></a>
+    </div>
+    <div style="margin-top: 48px; display: flex; align-items: center; justify-content: center; color: #333; font-size: 15px; font-weight: 800;">
+      <span style="flex-grow: 1; text-align: left;">신랑측 혼주</span>
+      <ion-icon *ngIf="is_show_contact" (click)="is_show_contact = !is_show_contact" name="caret-up-sharp" class="toggle-icon"></ion-icon>
+      <ion-icon *ngIf="!is_show_contact" (click)="is_show_contact = !is_show_contact" name="caret-down-sharp" class="toggle-icon"></ion-icon>
+      <span style="flex-grow: 1; text-align: right;">신부측 혼주</span>
+    </div>
+    <div *ngIf="is_show_contact">
+      <div style="margin-top: 24px; display: flex; align-items: center; justify-content: center;">
+        <div style="flex-grow: 1; text-align: left;">
+          <span style="font-size: 15px; color: #414141; font-weight: 600; margin-right: 8px;">
+            아버지
+          </span>
+          <span style="font-size: 18px; color: #555555; font-weight: 800;">
+            김종호
+          </span>
+        </div>
+        <div style="flex-grow: 1; text-align: right;">
+          <span style="font-size: 15px; color: #414141; font-weight: 600; margin-right: 8px;">
+            아버지
+          </span>
+          <span style="font-size: 18px; color: #555555; font-weight: 800;">
+            고기환
+          </span>
+        </div>
+      </div>
+      <div style="margin-top: 12px; display: flex; align-items: center; justify-content: center;">
+        <div style="flex-grow: 1; text-align: left;">
+          <a href="tel:010-5066-5416" style="margin-right: 24px;"><img src="assets/img/phone_b.png" style="width: 27px; height: 27px;"></a>
+          <a href="sms:010-5066-5416"><img src="assets/img/sms_b.png" style="width: 27px; height: 23.78px;"></a>
+        </div>
+        <div style="flex-grow: 1; text-align: right;">
+          <a href="tel:010-3735-3960" style="margin-right: 24px;"><img src="assets/img/phone_b.png" style="width: 27px; height: 27px;"></a>
+          <a href="sms:010-3735-3960"><img src="assets/img/sms_b.png" style="width: 27px; height: 23.78px;"></a>
+        </div>
+      </div>
+      <div style="margin-top: 16px; display: flex; align-items: center; justify-content: center;">
+        <div style="flex-grow: 1; text-align: left;">
+          <span style="font-size: 15px; color: #414141; font-weight: 600; margin-right: 8px;">
+            어머니
+          </span>
+          <span style="font-size: 18px; color: #555555; font-weight: 800;">
+            박경희
+          </span>
+        </div>
+        <div style="flex-grow: 1; text-align: right;">
+          <span style="font-size: 15px; color: #414141; font-weight: 600; margin-right: 8px;">
+            어머니
+          </span>
+          <span style="font-size: 18px; color: #555555; font-weight: 800;">
+            조미애
+          </span>
+        </div>
+      </div>
+      <div style="margin-top: 12px; display: flex; align-items: center; justify-content: center;">
+        <div style="flex-grow: 1; text-align: left;">
+          <a href="tel:010-2034-4776" style="margin-right: 24px;"><img src="assets/img/phone_b.png" style="width: 27px; height: 27px;"></a>
+          <a href="sms:010-2034-4776"><img src="assets/img/sms_b.png" style="width: 27px; height: 23.78px;"></a>
+        </div>
+        <div style="flex-grow: 1; text-align: right;">
+          <a href="tel:010-2768-3960" style="margin-right: 24px;"><img src="assets/img/phone_b.png" style="width: 27px; height: 27px;"></a>
+          <a href="sms:010-2768-3960"><img src="assets/img/sms_b.png" style="width: 27px; height: 23.78px;"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #F9F9F9; padding: 11% 0 40px 0; margin-top: 20%;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="assets/img/wedding.png" style="width: 42%;">
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 0;">
+      <div *ngFor="let i of [1, 2, 3]" (click)="show_image(i)" class="img" [style.background]="'url(assets/img/' + i + '.jpg) no-repeat center center'"></div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 0;">
+      <div *ngFor="let i of [4, 5, 6]" (click)="show_image(i)" class="img" [style.background]="'url(assets/img/' + i + '.jpg) no-repeat center center'"></div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 0;">
+      <div *ngFor="let i of [7, 8, 9]" (click)="show_image(i)" class="img" [style.background]="'url(assets/img/' + i + '.jpg) no-repeat center center'"></div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 0;">
+      <div *ngFor="let i of [10, 11, 12]" (click)="show_image(i)" class="img" [style.background]="'url(assets/img/' + i + '.jpg) no-repeat center center'"></div>
+    </div>
+  </div>
+  <div style="margin: 12% 0 5% 0;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="assets/img/comon.png" style="width: 17.5%;">
+    </div>
+    <div style="margin: 0 15px;">
+      <div id="map" style="width: 100%; height: 240px; margin-top: 32px;"></div>
+      <a href="https://map.kakao.com/?urlX=524672.0&urlY=1083675.0&name=%EB%8D%94%EB%B8%94%EC%9C%A0%EC%8A%A4%ED%80%98%EC%96%B4" target="_blank"><div style="color: #fff; text-align: center; font-size: 16px; font-weight: 600; background: #d2a46a; border-radius: 2px; padding: 16px; font-family: 'Malgun Gothic', '나눔고딕', 'NanumGothic', 'NanumGothicWEB', '나눔명조', 'Nanum Myeongjo', '맑은 고딕', '돋움', Dotum, '굴림', Gulim, sans-serif">
+        카카오맵 바로가기
+      </div></a>
+    </div>
+    <div style="margin: 40px 20px 20px 20px; font-weight: 800; color: #444444;">
+      <div style="display: flex; align-items: center;">
+        <div style="flex-grow: 1;">
+          <div style="font-size: 18px;">더블유스퀘어 L층 그레이스홀</div>
+          <div style="font-size: 15px; margin-top: 8px; letter-spacing: -1px;">경기 성남시 분당구 판교역로226번길 16</div>
+        </div>
+        <a href="tel:031-703-0116"><img src="assets/img/phone2_b.png" style="width: 27px; height: 27px;"></a>
+      </div>
+      <div style="font-size: 15px; margin-top: 8px;">031-703-0116</div>
+    <div style="margin: 40px 20px 20px 20px;">
+      <div style="font-size: 16px; font-weight: 800; color: #555555;">버스안내</div>
+      <div style="margin-top: 6px; font-size: 15px; font-weight: 600; color: #666666; line-height: 22px; letter-spacing: 0px;">
+        지선 : 101, 330, 350, 390, 602-1<br>
+        광역 : 1150-2, 7007-1, 1150, 9007, 9401, 5500-1, 1005, 1005-1
+      </div>
+    </div>
+    <div style="margin: 50px 20px 0 20px;">
+      <div style="font-size: 16px; font-weight: 800; color: #555555;">전세버스</div>
+      <div style="margin-top: 6px; font-size: 15px; font-weight: 600; color: #666666; line-height: 22px; letter-spacing: 0px;">
+        김해 차편 / 7:30 김해대동농협 경제사업소 - 7:40 강서구청역 앞
+      </div>
+    </div>
+    <div style="font-size: 16px; margin: 48px 0; line-height: 28px; font-weight: 600; color: #444444;">
+      코로나 19로 인해 많은 고민 끝에  결혼식을   올립니다.    어렵고  힘든시기에  결혼식을  알려드리게 되어  미안한 마음이 듭니다.  넓은  마음으로  이해 해주시고  축복해주시면  감사하겠습니다.<br><br>
+      사회적 거리두기  수칙으로 인해  참석인원의 제한으로  울산에서는  차량을 운행하지 않으며   김해발 전세버스는  소수의 인원으로  제한함을  양해 바랍니다.
+    </div>
+    <div style="border: solid 1px rgba(0,0,0,0.05); padding: 24px 16px; margin: 32px 0;">
+      <div style="text-align: center; font-size: 20px; font-weight: 700;">마음 전하실 곳</div>
+      <div style="margin-top: 32px;">
+        <div style="font-size: 18px; color: #555555; font-weight: 800;">
+          신랑측
+        </div>
+        <div style="margin-top: 8px; font-size: 15px; color: #414141; font-weight: 400;">
+          농협은행 김종호 825-02-494051
+        </div>
+      </div>
+      <div style="margin-top: 32px;">
+        <div style="font-size: 18px; color: #555555; font-weight: 800;">
+          신부측
+        </div>
+        <div style="margin-top: 8px; font-size: 15px; color: #414141; font-weight: 400;">
+          국민은행 고기환 584102-01-107109
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; background: #999999; border-radius: 2px;">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmkka.xxz.kr%2F&amp;src=sdkpreparse" target="_blank" style="width: 20%; cursor: pointer; margin-right: 5%;"><img src="assets/img/facebook.png" style="width: 100%;"></a>
+    <img id="kakao_link" src="assets/img/kakao.png" style="width: 25%; cursor: pointer; margin-right: 5%;">
+    <img (click)="kakao_story()" src="assets/img/kakao_story.png" style="width: 20%; cursor: pointer;">
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; height: 70px; font-size: 16px; font-weight: 800; background: #F7F7F7;">
+    <span style="letter-spacing: 2px;">김민기</span>
+    <img src="assets/icon/favicon.png" style="width: 24px; height: 24px; margin: 0 10px;">
+    <span style="letter-spacing: 2px;">고경아</span>
+  </div>
+</div>

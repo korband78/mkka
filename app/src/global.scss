@@ -1,0 +1,77 @@
+@import "~@ionic/angular/css/core.css";
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import "~codemirror/lib/codemirror.css";
+@import "~@toast-ui/editor/dist/toastui-editor.css";
+@import "~tui-chart/dist/tui-chart.css";
+@import "~highlight.js/styles/github.css";
+@import "~tui-color-picker/dist/tui-color-picker.css";
+
+@import "~swiper/swiper.scss";
+
+/*************************************
+ * IONIC
+ *************************************/
+:root {
+  color-scheme: light;
+}
+
+/*************************************
+ * 기본 태그
+ *************************************/
+* {
+  outline: none;
+}
+
+html, body {
+  position: relative;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #666666;
+  height: auto;
+  box-sizing: border-box;
+  min-width: 320px;
+  font-family: '나눔명조', 'Nanum Myeongjo', '맑은 고딕', 'Malgun Gothic', '나눔고딕', 'NanumGothic', 'NanumGothicWEB', '돋움', Dotum, '굴림', Gulim, sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+a:link { text-decoration: none;}
+a:visited { text-decoration: none;}
+a:hover { text-decoration: none;}
+
+// 어두운 배경
+.dark-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background: #000000;
+  z-index: -1;
+  -webkit-transition:all .3s ease .01s;
+  transition:all .3s ease .01s;
+
+  overflow: scroll;
+}
+
+
+.dark-background.active {
+  opacity: 0.8;
+  z-index: 1;
+  cursor: pointer;
+}
